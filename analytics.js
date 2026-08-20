@@ -6,8 +6,7 @@
  * ni manda datos a ningún lado.
  */
 (function () {
-  var ENDPOINT = ""; // ← pega aquí la URL de tu Google Apps Script Web App
-
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbz64FyJ1n8KzpsJali_ly5V-w9XKdPYQCzhVPdiuoPLq2QRTZP2NHGIW7chHZ4-DgJTaA/exec";
   if (!ENDPOINT) return;
   if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
 
