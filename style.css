@@ -1,0 +1,376 @@
+:root{
+  --ink:#211f1c;
+  --ink-soft:#5a5650;
+  --paper:#f8f4ec;
+  --card:#ffffff;
+  --line:#e4ddd0;
+  --navy:#15161a;
+  --navy-soft:#26272d;
+  --gold:#b8862a;
+  --gold-light:#f0dfb8;
+  --ok-bg:#eef7ef;
+  --ok-text:#276b3c;
+  --pending-bg:#fbeee0;
+  --pending-text:#a15a12;
+  --radius:14px;
+  --serif: "Fraunces", Georgia, "Iowan Old Style", serif;
+  --sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.5;
+}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:
+    linear-gradient(100deg, rgba(21,22,26,.97) 0%, rgba(21,22,26,.92) 34%, rgba(21,22,26,.62) 62%, rgba(21,22,26,.32) 100%),
+    url('assets/pulppo-background-08.jpg') center 38% / cover no-repeat;
+  color:#fff;
+  padding:72px 0 56px;
+}
+.hero-inner{max-width:760px;}
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.75rem;
+  color:var(--gold-light);
+  margin:0 0 14px;
+  font-weight:600;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-optical-sizing:auto;
+  font-weight:500;
+  font-size:clamp(1.9rem, 4vw, 2.9rem);
+  line-height:1.12;
+  letter-spacing:-0.01em;
+  margin:0 0 18px;
+  text-wrap:balance;
+}
+.hero .lead{
+  color:#d7d6da;
+  font-size:1.05rem;
+  max-width:56ch;
+  margin:0 0 30px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:.92rem;
+  font-weight:600;
+  transition:transform .15s ease, opacity .15s ease;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-icon{display:inline-flex;align-items:center;gap:9px;}
+.wa-icon{width:17px;height:17px;flex:0 0 auto;fill:currentColor;}
+.btn-primary{background:var(--gold);color:#1c1400;}
+.btn-primary:hover{opacity:.92;}
+.btn-ghost{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+
+/* ---------- Step nav ---------- */
+.stepbar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(250,249,247,.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.stepbar-inner{
+  display:flex;
+  gap:4px;
+  overflow-x:auto;
+  padding:10px 24px;
+  scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(to right, black calc(100% - 36px), transparent 100%);
+  mask-image:linear-gradient(to right, black calc(100% - 36px), transparent 100%);
+}
+.stepbar-inner::-webkit-scrollbar{display:none;}
+.stepbar-inner a{
+  flex:0 0 auto;
+  padding:8px 14px;
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--ink-soft);
+  font-size:.85rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+.stepbar-inner a:hover{background:var(--line);}
+.stepbar-inner a.active{background:var(--navy);color:#fff;}
+
+/* ---------- Toolbar / search ---------- */
+.toolbar{padding:32px 0 8px;}
+#search{
+  width:100%;
+  padding:14px 18px;
+  font-size:1rem;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--card);
+  color:var(--ink);
+}
+#search:focus{outline:2px solid var(--gold);outline-offset:1px;}
+.toolbar-hint{font-size:.8rem;color:var(--ink-soft);min-height:1.2em;margin:8px 2px 0;}
+
+/* ---------- Rubro sections ---------- */
+main{padding:28px 0 60px;}
+.rubro{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:30px 32px;
+  margin:20px 0;
+  display:flex;
+  align-items:flex-start;
+  gap:36px;
+}
+.rubro-head{
+  flex:0 0 250px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  position:sticky;
+  top:84px;
+}
+.fase-badge{
+  align-self:flex-start;
+  background:var(--navy);
+  color:var(--gold-light);
+  font-weight:700;
+  font-size:.78rem;
+  letter-spacing:.04em;
+  padding:5px 10px;
+  border-radius:8px;
+  margin-bottom:2px;
+}
+.rubro h2{
+  font-family:var(--serif);
+  font-optical-sizing:auto;
+  font-weight:500;
+  font-size:1.35rem;
+  line-height:1.2;
+  letter-spacing:-0.005em;
+  margin:0;
+  text-wrap:balance;
+}
+.rubro-desc{
+  margin:0;
+  color:var(--ink-soft);
+  font-size:.9rem;
+}
+.rubro-body{
+  flex:1 1 0%;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.info-box{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:16px 20px;
+}
+.info-box h3{
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--ink-soft);
+  margin:14px 0 8px;
+}
+.info-box h3:first-child{margin-top:0;}
+.info-box ul{margin:0;padding-left:20px;}
+.info-box li{margin-bottom:4px;}
+.inline-list{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px;}
+.inline-list li{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:.85rem;
+}
+
+.service-grid{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:6px 24px;
+}
+.service-grid li{
+  position:relative;
+  padding-left:14px;
+  font-size:.85rem;
+  line-height:1.4;
+}
+.service-grid li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.55em;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--gold);
+}
+@media (max-width:520px){
+  .service-grid{grid-template-columns:1fr;}
+}
+
+.mini-links{display:flex;flex-wrap:wrap;gap:8px;}
+.mini-links a{
+  display:inline-flex;
+  align-items:center;
+  background:var(--navy);
+  color:#fff;
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:700;
+  padding:7px 14px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.mini-links a:hover{background:var(--gold);color:#1c1400;}
+
+.callout{
+  background:var(--gold-light);
+  border:1px solid #e6c988;
+  border-radius:10px;
+  padding:14px 18px;
+  font-size:.92rem;
+}
+.callout a{color:var(--navy);}
+
+.resource-list{
+  list-style:none;margin:0;padding:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;
+}
+.resource{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:8px;
+  padding:28px 22px 24px;
+  border-radius:16px;
+  background:var(--navy-soft);
+  border:1px solid rgba(255,255,255,.07);
+}
+.resource-icon{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  margin-bottom:4px;
+}
+.resource-icon svg{width:24px;height:24px;}
+.resource.available .resource-icon{background:var(--ok-text);}
+.resource.pending .resource-icon{background:var(--pending-text);}
+.resource-main{display:flex;flex-direction:column;gap:6px;}
+.resource-name{font-weight:700;font-size:1.02rem;color:var(--gold-light);}
+.resource-note{font-size:.85rem;color:#c9c7cd;line-height:1.45;}
+.resource-link{
+  margin-top:8px;
+  background:var(--gold);
+  color:#1c1400;
+  text-decoration:none;
+  font-size:.85rem;
+  font-weight:700;
+  padding:10px 20px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.resource-link:hover{background:#fff;}
+.resource-badge{
+  margin-top:8px;
+  background:rgba(255,255,255,.08);
+  color:#e3c9a3;
+  font-size:.78rem;
+  font-weight:700;
+  padding:8px 16px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+
+.step-note{
+  margin:0;
+  font-size:.88rem;
+  color:var(--ink-soft);
+  border-left:3px solid var(--gold);
+  padding-left:12px;
+}
+
+.stat-row{display:flex;gap:10px;flex-wrap:nowrap;}
+.stat{
+  flex:1 1 0;
+  min-width:0;
+  background:var(--navy);
+  color:#fff;
+  border-radius:10px;
+  padding:14px 14px;
+}
+.stat-num{
+  display:block;
+  font-family:var(--serif);
+  font-size:1.6rem;
+  color:var(--gold-light);
+  margin-bottom:4px;
+}
+.stat-label{font-size:.82rem;color:#cfced4;}
+
+.steps{margin:0;padding-left:22px;}
+.steps li{margin-bottom:8px;}
+
+.contact-rubro{
+  background:
+    linear-gradient(rgba(21,22,26,.9), rgba(21,22,26,.94)),
+    url('assets/pulppo-background-04.jpg') center 30% / cover no-repeat;
+  justify-content:center;
+  padding:30px 32px;
+}
+
+/* hidden via search filter */
+.rubro.is-hidden{display:none;}
+.resource.is-hidden{display:none;}
+
+.footer{
+  border-top:1px solid var(--line);
+  padding:26px 0 40px;
+  color:var(--ink-soft);
+  font-size:.82rem;
+}
+
+@media (max-width:860px){
+  .rubro{flex-direction:column;gap:16px;}
+  .rubro-head{flex:0 0 auto;position:static;}
+}
+
+@media (max-width:560px){
+  .hero{padding:52px 0 40px;}
+  .rubro{padding:22px 18px 24px;}
+}
